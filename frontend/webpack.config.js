@@ -6,7 +6,7 @@ module.exports = (env, argv) => {
   const isProduction = argv.mode === "production";
 
   return {
-    entry: "./src/index.js",
+    entry: "./src/index.ts",
     output: {
       path: path.resolve(__dirname, "build"),
       filename: isProduction ? "[name].[contenthash].js" : "[name].js",
@@ -15,14 +15,14 @@ module.exports = (env, argv) => {
     module: {
       rules: [
         {
-          test: /\.js$/,
-          exclude: /node_modules/,
+          test: /\.tsx?$/,
           use: {
             loader: "babel-loader",
             options: {
-              presets: ["@babel/preset-env"],
+              presets: ["@babel/preset-env", "@babel/preset-typescript"],
             },
           },
+          exclude: /node_modules/         
         },
         {
           test: /\.css$/,
@@ -64,7 +64,7 @@ module.exports = (env, argv) => {
       historyApiFallback: true,
     },
     resolve: {
-      extensions: [".js", ".css"],
+      extensions: [".ts", ".tsx", ".js", ".jsx", ".css"],
     },
   };
 };

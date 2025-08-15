@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "target": "ES2021",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "outDir": "./build", 
+        "rootDir": "./src", 
+        "allowJs": true, 
+        "checkJs": true, 
+        "types": [
+            "node"
+        ],
+
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "references": [
+        {
+            "path": "./tsconfig.eslint.json"
+        }
+    ]
+}

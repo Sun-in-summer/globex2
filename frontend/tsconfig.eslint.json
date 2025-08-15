@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "types": [
+            "node"
+        ],
+        "strict": true,
+        "composite": true
+    },
+    "include": [
+        "eslint.config.mts"
+    ],
+   
+}

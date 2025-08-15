@@ -1,3 +1,3 @@
-import { init } from "./controller.js";
+import { init } from "./controller";
 
 document.addEventListener("DOMContentLoaded", init);
