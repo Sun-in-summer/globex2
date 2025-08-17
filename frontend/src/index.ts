@@ -1,2 +1,4 @@
+import { init } from './controllers/user-controller';
 import "./css/styles.css";
-import "./js/app";
+
+document.addEventListener("DOMContentLoaded", init);

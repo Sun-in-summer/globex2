@@ -1,9 +1,10 @@
 import { User } from '../interfaces/user';
-import { getElements } from './elements';
+import { getElement } from '../utils/dom';
 
-export function openModal(user: User) : void {
-  const { modal, modalBody } = getElements();
-    if (!modal || !modalBody) return; 
+export function openModal(user: User): void {
+ const modal = getElement<HTMLDivElement>("userModal");
+ const modalBody = getElement<HTMLDivElement>("modalBody");
+  if (!modal || !modalBody) return;
   modalBody.innerHTML = `
     <h2>${user.name}</h2>
     <p><strong>Телефон:</strong> ${user.phone || "-"}</p>
@@ -12,7 +13,7 @@ export function openModal(user: User) : void {
 }
 
 export function closeModal(): void {
-   const { modal } = getElements();
-   if (!modal) return;
+  const modal = getElement<HTMLDivElement>("userModal");
+  if (!modal) return;
   modal.style.display = "none";
 }
