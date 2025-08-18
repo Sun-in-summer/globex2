@@ -1,20 +1,25 @@
 import { getElement } from "../utils/dom";
 
-export function showLoading(flag: boolean): void {
   const loading = getElement<HTMLDivElement>("loadingSpinner");
   const userGrid = getElement<HTMLDivElement>("userGrid");
-  if (!loading || !userGrid) return;
+  const noResults = getElement<HTMLDivElement>("noResults");
 
-  loading.style.display = flag ? "block" : "none";
-  userGrid.style.display = flag ? "none" : "grid";
+export function showLoading(flag: boolean): void {
+
+ if (!loading || !userGrid) return;
+ loading.classList.toggle("is-hidden", !flag);
+  userGrid.classList.toggle("is-hidden", flag);
+   noResults?.classList.add("is-hidden");
 }
 
 export function showNoResults(flag: boolean): void {
-  const noResults = getElement<HTMLDivElement>("noResults");
-  if (noResults) noResults.style.display = flag ? "block" : "none";
+
+  if (!noResults) return;
+  "NO RES";
+  userGrid?.classList.add("is-hidden");
+  noResults.classList.remove("is-hidden");
 }
 
 export function showError(msg: string): void {
-  const userGrid = getElement<HTMLDivElement>("userGrid");
   if (userGrid) userGrid.innerHTML = `<div class="error-message">${msg}</div>`;
 }

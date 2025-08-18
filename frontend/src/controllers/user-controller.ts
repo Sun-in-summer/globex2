@@ -50,6 +50,7 @@ async function loadAndRender(term = ""): Promise<void> {
   showNoResults(false);
   try {
     const users = await fetchUsers(term);
+    console.log(users);
     showLoading(false);
     if (users.length === 0) {
       showNoResults(true);

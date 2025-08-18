@@ -3,8 +3,8 @@ export interface User {
   name: string;
   phone?: string;
   email?: string;
-  hireDate?: string;
-  position?: string;
+  hire_date?: string;
+  position_name?: string;
   department?: string;
   additionalInfo?: string;
 }

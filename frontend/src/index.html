@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Список пользователей</title>
+    <style>
+        .is-hidden {
+            display: none !important;
+        }
+    </style>
 
 
 </head>
@@ -13,9 +18,8 @@
 <body>
     <div class="container">
         <header class="header">
-            <h1>Список</h1>
             <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Поиск по имени или фамилии..." class="search-input">
+                <input type="text" id="searchInput"  class="search-input"> 
                 <button id="searchBtn"class="search-btn" >
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="11" cy="11" r="8"></circle>
@@ -26,23 +30,23 @@
         </header>
 
         <main>
-            <div id="userGrid" class="user-grid">
+            <div id="userGrid" class="user-grid is-hidden ">
 
             </div>
 
-            <div id="loadingSpinner" class="loading" style="display: none;">
+            <div id="loadingSpinner" class="loading " >
                 <div class="spinner"></div>
                 <p>Загрузка...</p>
             </div>
 
-            <div id="noResults" class="no-results" style="display: none;">
+            <div id="noResults" class="no-results is-hidden">
                 <p>Пользователи не найдены</p>
             </div>
         </main>
     </div>
 
     <!-- Pop-up окно -->
-    <div id="userModal" class="modal" style="display: none;">
+    <div id="userModal" class="modal " >
         <div class="modal-overlay"></div>
         <div class="modal-content">
             <button class="modal-close" id="modalClose">&times;</button>
